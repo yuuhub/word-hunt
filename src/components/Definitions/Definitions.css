@@ -2,9 +2,40 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    height: 55vh;
+    padding: 10px 20px;
+    overflow-x: hidden;
+}
+
+.meanings::-webkit-scrollbar { 
+    width: 2px; 
+    height: 100%; 
+    background-color: white; 
+}
+
+.meanings::-webkit-scrollbar-thumb { 
+    background: #000; 
 }
 
 .subTitle {
     font-size: 2vw;
     font-family: 'Montserrat', sans-serif;
+}
+
+.singleMeaning {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 10px 0;
+    background-color: #fff;
+    color: black;
+}
+
+@media (max-width: 900px) {
+    .meanings {
+        height: 60vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 }
