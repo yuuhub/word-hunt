@@ -13,7 +13,7 @@ function App() {
   const [word, setWord] = useState("");
   const [meanings, setMeanings] = useState([]);
   const [category, setCategory] = useState("en");
-  const [LightMode, setLightMode] = useState(false);
+  const [DarkMode, setDarkMode] = useState(false);
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -78,18 +78,32 @@ function App() {
   }, [word, category])
 
   return (
-    <div className="App" style={{height: "100vh", backgroundColor: "#EEEEEE"}}>
+    <div 
+      className="App" 
+      style={{
+        height: "100vh", 
+        backgroundColor: DarkMode? "#1A1A40" : "#EEEEEE",
+        color: DarkMode? "white" : "black",
+        transition: "all 0.3s linear",
+      }}
+    >
       <Container 
         maxWidth="md" 
         style={{display: "flex", flexDirection: "column", height: "100vh", justifyContent: "space-evenly"}}
       >
         <div style={{ position: "absolute", top: 0, right: 15, paddingTop: 10}}>
           <MaterialUISwitch 
-            checked={LightMode} 
-            onChange={() => setLightMode(!LightMode)}
+            checked={DarkMode} 
+            onChange={() => setDarkMode(!DarkMode)}
           />
         </div>
-        <Header category={category} setCategory={setCategory} word={word} setWord={setWord}/>
+        <Header 
+          category={category} 
+          setCategory={setCategory} 
+          word={word} 
+          setWord={setWord}
+          DarkMode={DarkMode}
+        />
         <br />
         {meanings && <Definitions word={word} meanings={meanings} category={category} /> }
       </Container>

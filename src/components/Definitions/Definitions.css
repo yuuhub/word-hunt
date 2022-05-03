@@ -11,6 +11,11 @@
     width: 2px; 
     height: 100%; 
     background-color: white; 
+    visibility: hidden;
+}
+
+.meanings:active::-webkit-scrollbar-thumb {
+    visibility: visible;
 }
 
 .meanings::-webkit-scrollbar-thumb { 
@@ -26,7 +31,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    padding: 15px 20px;
+    padding: 10px 20px;
     margin: 10px 0;
     background-color: #fff;
     color: black;
