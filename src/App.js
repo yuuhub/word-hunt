@@ -75,7 +75,7 @@ function App() {
 
   useEffect(() => {
     dictionaryApi();
-  }, [word, category])
+  }, [word, category]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div 
